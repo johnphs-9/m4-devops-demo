@@ -26,7 +26,6 @@ jobs:
           root: .
           paths:
             - target/*.jar
-
   # ==========================================
   # TEST JOB - Run automated tests
   # ==========================================
@@ -48,7 +47,6 @@ jobs:
           path: target/surefire-reports
       - store_artifacts:
           path: target/surefire-reports
-
   # ==========================================
   # PUBLISH JOB - Build and push Docker image
   # ==========================================
@@ -72,7 +70,6 @@ jobs:
             echo $DOCKER_TOKEN | docker login -u $DOCKER_USERNAME --password-stdin
             echo "Pushing image to Docker Hub..."
             docker push $DOCKER_USERNAME/devops-demo:latest
-
 # ==========================================
 # WORKFLOW - Run jobs in sequence
 # ==========================================
